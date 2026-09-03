@@ -1,0 +1,100 @@
+# SAFE VIM TRAINING DATA — NOT A DEPLOYABLE CONFIGURATION
+# All names, addresses, tokens, and events below are fictional examples.
+
+BEGIN_NAVIGATION
+environment=staging
+region=ap-south-1
+cluster=training-cluster
+namespace=demo-platform
+replicas=2
+image=registry.example.invalid/platform/api:v1.4.2
+END_NAVIGATION
+
+BEGIN_WORD_MOVEMENT
+api_url=https://api.staging.example.invalid/v1/health?verbose=true
+artifact_path=/opt/platform/releases/2026/09/api-server.tar.gz
+container_image=registry.example.invalid/platform/worker:v2.8.0
+database_dsn=postgresql://demo_user@db.example.invalid:5432/training
+END_WORD_MOVEMENT
+
+BEGIN_EDITING
+LOG_LEVEL=debug
+FEATURE_FLAG=false
+MAX_CONNECTIONS=100
+REQUEST_TIMEOUT_SECONDS=30
+OLD_REGION=us-east-1
+OLD_REGION=us-east-1
+OLD_REGION=us-east-1
+END_EDITING
+
+BEGIN_SEARCH_REPLACE
+environment=staging
+url=https://api.staging.example.invalid
+label=staging
+note=leave-this-staging-area-unchanged-unless-intended
+END_SEARCH_REPLACE
+
+BEGIN_BLOCK_EDIT
+node-a.example.invalid
+node-b.example.invalid
+node-c.example.invalid
+node-d.example.invalid
+node-e.example.invalid
+END_BLOCK_EDIT
+
+BEGIN_DUPLICATE_HOSTS
+api-03.example.invalid
+api-01.example.invalid
+api-02.example.invalid
+api-02.example.invalid
+api-04.example.invalid
+api-01.example.invalid
+END_DUPLICATE_HOSTS
+
+BEGIN_YAML_LIKE
+service:
+  name: api
+  image: registry.example.invalid/platform/api:v1
+  replicas: 2
+  ports:
+    - 8080
+    - 9090
+END_YAML_LIKE
+
+BEGIN_JSON
+{"service":"api","enabled":true,"replicas":2}
+END_JSON
+
+BEGIN_LOGS
+2026-09-02T09:00:00Z INFO  request_id=req-001 service=api message="startup complete"
+2026-09-02T09:00:03Z WARN  request_id=req-002 service=api message="response time above threshold"
+2026-09-02T09:00:04Z ERROR request_id=req-003 service=api message="database connection refused"
+2026-09-02T09:00:05Z INFO  request_id=req-004 service=worker message="job accepted"
+2026-09-02T09:00:07Z ERROR request_id=req-005 service=worker message="job retry limit reached"
+2026-09-02T09:00:10Z FATAL request_id=req-007 service=api message="dependency unavailable"
+END_LOGS
+
+BEGIN_FLAT_ALLOWLIST
+10.20.0.14
+10.20.0.11
+10.20.0.13
+10.20.0.11
+10.20.0.12
+10.20.0.14
+END_FLAT_ALLOWLIST
+
+BEGIN_VALIDATION_CHECKLIST
+format configuration
+review git diff
+run syntax validation
+run tests when applicable
+run policy checks when applicable
+create execution plan when applicable
+obtain required approval
+deploy through normal process
+verify health and metrics
+END_VALIDATION_CHECKLIST
+
+BEGIN_FINAL_TARGET
+If you can reach this line with G, return to the first line with gg.
+END_FINAL_TARGET

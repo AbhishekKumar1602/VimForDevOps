@@ -1,0 +1,11 @@
+# Vim temporary/recovery files
+*.swp
+*.swo
+*.swn
+*~
+
+# Optional local Vim session files
+Session.vim
+
+# OS/editor noise
+.DS_Store
